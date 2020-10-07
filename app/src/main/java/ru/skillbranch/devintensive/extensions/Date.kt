@@ -30,7 +30,7 @@ fun Date.add(value: Int, units: TimeUnits = TimeUnits.SECOND): Date {
         else -> throw IllegalStateException("invalid unit")
     }
     this.time = time
-    return this
+    return this;
 }
 
 enum class TimeUnits
