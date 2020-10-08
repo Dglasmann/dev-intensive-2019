@@ -21,7 +21,7 @@ object Utils {
         val surname = lastName.orEmpty().trim().getOrNull(0)?.toUpperCase()
         val firstInit = name?.toString()?: ""
         val secondInit = surname?.toString()?: ""
-        return "$firstInit $secondInit".ifEmpty { null }
+        return "$firstInit$secondInit".ifEmpty { null }
 
     }
 
