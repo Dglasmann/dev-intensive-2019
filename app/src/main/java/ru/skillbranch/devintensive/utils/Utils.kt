@@ -6,7 +6,7 @@ object Utils {
         val parts:List<String>? = fullName?.trim()?.split(" ")
         return Pair(parts?.getOrNull(0)?.ifEmpty { null }, parts?.getOrNull(1)?.ifEmpty { null })
     }
-    
+
 
     fun toInitials(firstName: String?, lastName: String?): String? {
         val name = firstName.orEmpty().trim().getOrNull(0)?.toUpperCase()
