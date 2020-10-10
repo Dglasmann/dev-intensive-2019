@@ -2,19 +2,11 @@ package ru.skillbranch.devintensive.utils
 
 object Utils {
 
-    fun parseFullName(fullName: String?): Pair<String?, String?> {
-        val parts = fullName?.split(" ")
-        val firstName = parts?.getOrNull(0).setNullOrEmpty()
-        val lastName = parts?.getOrNull(1).setNullOrEmpty()
-        return Pair(firstName, lastName)
+    fun parseFullName(fullName:String?): Pair<String?, String?> {
+        val parts:List<String>? = fullName?.trim()?.split(" ")
+        return Pair(parts?.getOrNull(0)?.ifEmpty { null }, parts?.getOrNull(1)?.ifEmpty { null })
     }
-
-
-    private fun String?.setNullOrEmpty() :String {
-        if (this == "" || this == null)
-            return "null"
-        else return this
-    }
+    
 
     fun toInitials(firstName: String?, lastName: String?): String? {
         val name = firstName.orEmpty().trim().getOrNull(0)?.toUpperCase()
